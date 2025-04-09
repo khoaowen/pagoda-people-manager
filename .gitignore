@@ -1,0 +1,82 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# Build output
+target/
+bin/
+build/
+
+# Maven
+.mvn/
+.settings/
+dependency-reduced-pom.xml
+release.properties
+
+# Gradle (if ever used)
+.gradle/
+build/
+
+# Logs
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Java class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JavaFX
+fxbuild/
+generated/
+
+# Angular (web-app)
+web-app/node_modules/
+web-app/dist/
+web-app/.angular/
+web-app/.env
+web-app/.env.*
+
+# VSCode (if you also use it)
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+
+# JetBrains Rider (optional)
+.idea/
+
+# OS trash folders
+.trash/
+
+# Temporary files
+*.orig
+*.rej
+*.sublime-workspace
+*.sublime-project
+*.bak
+*~
