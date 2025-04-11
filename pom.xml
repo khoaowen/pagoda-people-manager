@@ -8,8 +8,12 @@
     <packaging>pom</packaging>
     <name>Pagoda People Manager</name>
     <modules>
+        <module>architecture-tests</module>
         <module>core</module>
-        <module>shared-models</module>
+        <module>shared</module>
+        <module>application</module>
+        <module>infrastructure</module>
+        <module>api</module>
     </modules>
 
     <properties>
@@ -28,6 +32,27 @@
             <dependency>
                 <groupId>com.pagoda</groupId>
                 <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda</groupId>
+                <artifactId>api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda</groupId>
+                <artifactId>application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pagoda</groupId>
+                <artifactId>infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.pagoda</groupId>
+                <artifactId>shared</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

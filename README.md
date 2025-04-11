@@ -28,9 +28,10 @@
 
 ```bash
 pagoda-people-manager/
-│
-├── core/             # Shared Java business logic
-├── shared-models/    # DTOs shared between backend and frontend
-├── backend-api/      # Spring Boot REST API
-├── desktop-app/      # JavaFX UI
-└── web-app/          # Angular frontend
+├── core/             ← Domain model (Person, enums)
+├── application/      ← Business use cases (PersonService)
+├── infrastructure/   ← JPA, PDF
+├── shared/           ← DTOs for API
+├── api/              ← REST controllers
+├── desktop-app/      ← JavaFX UI
+├── web-app/          ← Angular frontend

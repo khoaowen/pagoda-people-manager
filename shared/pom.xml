@@ -9,7 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>shared-models</artifactId>
+    <artifactId>shared</artifactId>
 
     <dependencies>
         <dependency>
