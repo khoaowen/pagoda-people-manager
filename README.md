@@ -6,8 +6,8 @@
 ![JavaFX](https://img.shields.io/badge/Desktop-JavaFX-green?logo=openjfx)
 ![SpringBoot](https://img.shields.io/badge/Backend-SpringBoot-brightgreen?logo=springboot)
 ![Angular](https://img.shields.io/badge/Web-Angular-red?logo=angular)
-![PDF](https://img.shields.io/badge/Export-PDF-critical?logo=adobeacrobatreader)
-![Cross Platform](https://img.shields.io/badge/Desktop-Windows%20%7C%20macOS-informational)
+![CI](https://github.com/khoaowen/pagoda-people-manager/actions/workflows/ci.yml/badge.svg)
+
 
 ---
 
