@@ -1,8 +1,13 @@
 package com.pagoda.shared.model;
 
-import java.time.LocalDate;
+import lombok.Builder;
 
+import java.time.LocalDate;
+import java.util.UUID;
+
+@Builder
 public record PersonDTO(
+        UUID id,
         String lastName,
         String firstName,
         String gender,

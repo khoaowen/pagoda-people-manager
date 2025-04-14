@@ -5,11 +5,13 @@ import com.pagoda.shared.model.PersonDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+import java.util.UUID;
+
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
-    PersonDTO toDto(Person person);
+    PersonDTO toDto(Person person, UUID id);
 
-    Person toEntity(PersonDTO dto);
+    Person toDomain(PersonDTO dto);
 }

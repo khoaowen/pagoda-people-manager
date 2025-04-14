@@ -2,8 +2,11 @@ package com.pagoda.architecture;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.library.Architectures;
 import org.junit.jupiter.api.Test;
+
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 class LayeredArchitectureTest {
 
@@ -25,5 +28,18 @@ class LayeredArchitectureTest {
                 .whereLayer("API").mayNotBeAccessedByAnyLayer()
 
                 .check(classes);
+    }
+
+    @Test
+    void testFixtures_should_not_be_used_in_main_code() {
+        JavaClasses mainClasses = new ClassFileImporter()
+                .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+                .importPackages("com.pagoda");
+
+        noClasses()
+                .that().resideOutsideOfPackage("..testfixtures..")
+                .should().dependOnClassesThat().resideInAnyPackage("..testfixtures..")
+                .because("Test fixture classes must not be used in production code")
+                .check(mainClasses);
     }
 }

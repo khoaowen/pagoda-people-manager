@@ -1,4 +1,4 @@
-package com.pagoda.shared.testutil;
+package com.pagoda.shared.testfixtures;
 
 import com.pagoda.core.model.Gender;
 import com.pagoda.core.model.Person;
@@ -6,7 +6,8 @@ import com.pagoda.core.model.PersonType;
 
 import java.time.LocalDate;
 
-public class PersonBuilder {
+public class PersonFixture {
+
     private String lastName = "Nguyen";
     private String firstName = "Van A";
     private Gender gender = Gender.MALE;
@@ -27,31 +28,34 @@ public class PersonBuilder {
     private String notes = "no notes";
     private PersonType type = PersonType.BUDDHIST;
 
-    public PersonBuilder lastName(String lastName) {
+    public static PersonFixture builder() {
+        return new PersonFixture();
+    }
+
+    public PersonFixture lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public PersonBuilder firstName(String firstName) {
+    public PersonFixture firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public PersonBuilder gender(Gender gender) {
+    public PersonFixture gender(Gender gender) {
         this.gender = gender;
         return this;
     }
 
-    public PersonBuilder birthDate(LocalDate birthDate) {
+    public PersonFixture birthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
         return this;
     }
 
-    public PersonBuilder type(PersonType type) {
+    public PersonFixture type(PersonType type) {
         this.type = type;
         return this;
     }
-
 
     public Person build() {
         return new Person(
