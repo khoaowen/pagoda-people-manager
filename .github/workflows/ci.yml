@@ -72,4 +72,4 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ env.JAVA_VERSION }}
-      - run: mvn clean install -DskipTests
+      - run: mvn clean install -Pskip-all-tests

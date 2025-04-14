@@ -185,6 +185,13 @@
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
         </profile>
+        <profile>
+            <id>skip-all-tests</id>
+            <properties>
+                <skip.unit.tests>true</skip.unit.tests>
+                <skip.integration.tests>true</skip.integration.tests>
+            </properties>
+        </profile>
     </profiles>
 
 </project>
