@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  checks: write
+  contents: read
 env:
   JAVA_VERSION: 21
 
