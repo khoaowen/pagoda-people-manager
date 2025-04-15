@@ -99,13 +99,13 @@ jobs:
           name: jacoco-report
           path: '**/target/jacoco-aggregate/jacoco.xml'
 
-      - name: Publish Coverage to GitHub Checks
-        uses: dorny/test-reporter@v1
-        if: always()
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
         with:
-          name: Coverage Report
-          path: target/jacoco-aggregate/jacoco.xml
-          reporter: java-jacoco
+          files: target/jacoco-aggregate/jacoco.xml
+          flags: coverage
+          name: codecov-coverage
+          fail_ci_if_error: false
   sonar:
     name: SonarQube Analysis
     runs-on: ubuntu-latest
