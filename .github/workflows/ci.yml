@@ -70,7 +70,7 @@ jobs:
         run: mvn verify -Pcoverage-report
 
       - name: Generate merged report from report-aggregate module
-        run: mvn clean verify --file report-aggregate/pom.xml
+        run: mvn clean verify -pl report-aggregate -am
 
       - name: Upload merged jacoco report
         uses: actions/upload-artifact@v4
