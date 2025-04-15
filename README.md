@@ -8,6 +8,7 @@
 ![Angular](https://img.shields.io/badge/Web-Angular-red?logo=angular)
 ![CI](https://github.com/khoaowen/pagoda-people-manager/actions/workflows/ci.yml/badge.svg)
 
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=khoaowen_pagoda-people-manager)
 
 ---
 

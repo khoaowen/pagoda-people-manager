@@ -66,14 +66,17 @@ jobs:
           distribution: temurin
           java-version: ${{ env.JAVA_VERSION }}
 
-      - name: Generate aggregated coverage report
+      - name: Generate reports
         run: mvn verify -Pcoverage-report
 
-      - name: Upload aggregated jacoco report
+      - name: Generate merged report from report-aggregate module
+        run: mvn clean verify --file report-aggregate/pom.xml
+
+      - name: Upload merged jacoco report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: target/jacoco-aggregate/jacoco.xml
+          path: report-aggregate/target/site/jacoco-aggregate/jacoco.xml
 
   sonar:
     name: SonarQube Analysis
@@ -98,9 +101,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
-          mvn compile sonar:sonar
+          mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage-report
           -Dsonar.projectKey=khoaowen_pagoda-people-manager
-          -Dsonar.coverage.jacoco.xmlReportPaths=jacoco-report/jacoco.xml
           -Dsonar.qualitygate.wait=true
   build:
     name: Build After Tests
