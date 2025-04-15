@@ -37,10 +37,6 @@
         <sonar.coverage.jacoco.xmlReportPaths>
             ${maven.multiModuleProjectDirectory}/report-aggregate/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
-        <!-- Ensure Sonar finds compiled classes for analysis -->
-        <sonar.java.binaries>**/target/classes</sonar.java.binaries>
-        <!-- Optional: If you're using MapStruct or any annotation processor -->
-        <sonar.java.libraries>**/target/generated-sources/**</sonar.java.libraries>
     </properties>
 
     <dependencyManagement>

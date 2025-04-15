@@ -54,7 +54,7 @@ jobs:
           reporter: java-junit
 
   aggregate-coverage:
-    name: Aggregate Coverage
+    name: Aggregate Coverage and Sonar scan
     runs-on: ubuntu-latest
     needs: [ unit-tests, integration-tests ]
     steps:
@@ -77,6 +77,14 @@ jobs:
         with:
           name: jacoco-report
           path: report-aggregate/target/site/jacoco-aggregate/jacoco.xml
+
+      - name: Run Sonar analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: >
+          mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage-report
+          -Dsonar.projectKey=khoaowen_pagoda-people-manager
+          -Dsonar.qualitygate.wait=true          
 
   sonar:
     name: SonarQube Analysis
