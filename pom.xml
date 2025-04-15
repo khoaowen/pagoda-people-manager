@@ -225,7 +225,8 @@
                                     <goal>report-aggregate</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${project.build.directory}/jacoco-aggregate</outputDirectory>
+                                    <outputDirectory>${project.basedir}/../target/jacoco-aggregate
+                                    </outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>

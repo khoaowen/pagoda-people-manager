@@ -33,12 +33,6 @@ jobs:
           path: "**/target/surefire-reports/*.xml"
           reporter: java-junit
 
-      - name: Upload coverage
-        uses: actions/upload-artifact@v4
-        with:
-          name: unit-coverage
-          path: '**/target/jacoco.exec'
-
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
@@ -59,12 +53,6 @@ jobs:
           path: "**/target/failsafe-reports/TEST-*.xml"
           reporter: java-junit
 
-      - name: Upload coverage
-        uses: actions/upload-artifact@v4
-        with:
-          name: integration-coverage
-          path: '**/target/jacoco.exec'
-
   aggregate-coverage:
     name: Aggregate Coverage
     runs-on: ubuntu-latest
@@ -78,34 +66,15 @@ jobs:
           distribution: temurin
           java-version: ${{ env.JAVA_VERSION }}
 
-      - name: Download unit test coverage
-        uses: actions/download-artifact@v4
-        with:
-          name: unit-coverage
-          path: target
-
-      - name: Download integration test coverage
-        uses: actions/download-artifact@v4
-        with:
-          name: integration-coverage
-          path: target
-
       - name: Generate aggregated coverage report
-        run: mvn verify -Pcoverage-report -Pskip-all-tests
+        run: mvn verify -Pcoverage-report
 
       - name: Upload aggregated jacoco report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: '**/target/jacoco-aggregate/jacoco.xml'
+          path: target/jacoco-aggregate/jacoco.xml
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          files: target/jacoco-aggregate/jacoco.xml
-          flags: coverage
-          name: codecov-coverage
-          fail_ci_if_error: false
   sonar:
     name: SonarQube Analysis
     runs-on: ubuntu-latest
