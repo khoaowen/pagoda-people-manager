@@ -11,11 +11,12 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "persons")
+@Table(name = "person")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 @Builder
 public class PersonEntity {
     @Id

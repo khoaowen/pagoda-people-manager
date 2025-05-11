@@ -3,9 +3,11 @@ package com.pagoda.shared.testfixtures;
 import com.pagoda.core.model.Gender;
 import com.pagoda.core.model.Person;
 import com.pagoda.core.model.PersonType;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class PersonFixture {
 
     private String lastName = "Nguyen";

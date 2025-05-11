@@ -17,10 +17,6 @@
             <artifactId>core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.pagoda</groupId>
-            <artifactId>infrastructure</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
         </dependency>

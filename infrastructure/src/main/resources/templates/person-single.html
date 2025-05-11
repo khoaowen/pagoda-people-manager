@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sơ Yếu Lý Lịch</title>
+    <style>
+        body {
+            font-family: 'DejaVu Serif', serif;
+            padding: 2em;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        .label {
+            display: inline-block;
+            width: 180px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Giáo Hội Phật Giáo Việt Nam</h2>
+<h3>Tu Viện An Lạc Hạnh</h3>
+<hr/>
+
+<h3>(Sơ lược)<br/>SƠ YẾU LÝ LỊCH</h3>
+
+<div class="field"><span class="label">Họ và tên:</span> {{lastName}} {{firstName}}</div>
+<div class="field"><span class="label">Giới tính:</span> {{gender}}</div>
+<div class="field"><span class="label">Ngày sinh:</span> {{birthDate}}</div>
+<div class="field"><span class="label">Nơi sinh:</span> {{birthPlace}}</div>
+<div class="field"><span class="label">Thường trú:</span> {{permanentResidence}}</div>
+<div class="field"><span class="label">Tạm trú:</span> {{temporaryResidence}}</div>
+<div class="field"><span class="label">Quê quán:</span> {{hometown}}</div>
+<div class="field"><span class="label">Dân tộc:</span> {{ethnicity}}</div>
+<div class="field"><span class="label">Quốc tịch:</span> {{nationality}}</div>
+<div class="field"><span class="label">Ngày quy y:</span> {{ordinationDate}}</div>
+<div class="field"><span class="label">Số CMND:</span> {{idNumber}}</div>
+<div class="field"><span class="label">Ngày cấp:</span> {{idIssueDate}}</div>
+<div class="field"><span class="label">Nơi cấp:</span> {{idIssuePlace}}</div>
+<div class="field"><span class="label">Email:</span> {{email}}</div>
+<div class="field"><span class="label">Số điện thoại:</span> {{phoneNumber}}</div>
+
+<p style="text-align: right;">
+    Tu viện An Lạc Hạnh,<br/>
+    {{currentDate}}
+</p>
+
+</body>
+</html>

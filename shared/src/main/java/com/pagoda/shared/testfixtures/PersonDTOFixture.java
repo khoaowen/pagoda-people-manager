@@ -5,12 +5,14 @@ import com.pagoda.shared.model.PersonDTO;
 import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @UtilityClass
 public class PersonDTOFixture {
 
     public static PersonDTO.PersonDTOBuilder personDTOBuilder() {
         return PersonDTO.builder()
+                .id(UUID.randomUUID())
                 .birthDate(LocalDate.of(1990, 1, 1))
                 .birthPlace("HCM")
                 .dharmaName("Lac Hanh")

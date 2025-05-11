@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Danh sách phật tử</title>
+    <style>
+        body {
+            font-family: 'DejaVu Serif', serif;
+            font-size: 12px;
+        }
+
+        .header {
+            text-align: right;
+        }
+
+        .logo {
+            width: 120px;
+            float: right;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 4px 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="classpath:static/logo.png" class="logo" alt="Logo"/>
+</div>
+
+<h2 style="text-align: center;">Danh sách Phật tử</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>HỌ</th>
+        <th>TÊN</th>
+        <th>NGÀY SINH</th>
+        <th>QUÊ QUÁN</th>
+        <th>PHÁP DANH</th>
+        <th>GIỚI PHẨM</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{rows}}
+    </tbody>
+</table>
+
+</body>
+</html>
