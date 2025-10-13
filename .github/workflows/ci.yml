@@ -26,7 +26,7 @@ jobs:
         run: mvn clean test -Punit-tests
 
       - name: Publish unit test report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@dc3a92680fcc15842eef52e8c4606ea7ce6bd3f3
         if: always()
         with:
           name: Unit Tests Report
@@ -46,7 +46,7 @@ jobs:
         run: mvn clean verify -Pintegration-tests
 
       - name: Publish integration test report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@dc3a92680fcc15842eef52e8c4606ea7ce6bd3f3
         if: always()
         with:
           name: Integration Tests Report
@@ -81,6 +81,7 @@ jobs:
         run: >
           mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage-report
           -Dsonar.projectKey=khoaowen_pagoda-people-manager
+          -Dsonar.organization=delsarl
           -Dsonar.qualitygate.wait=true          
 
   build:
