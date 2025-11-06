@@ -46,7 +46,7 @@ jobs:
         run: mvn clean package -Pskip-all-tests
       
       - name: Log in to Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -54,12 +54,12 @@ jobs:
       
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@318604b99e75e41977312d83839a89be02ca4893
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83
         with:
           context: .
           file: ./Dockerfile
