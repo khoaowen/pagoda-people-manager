@@ -23,15 +23,15 @@ jobs:
           cache-dependency-path: web-app/package-lock.json
       
       - name: Build Docker image
-        run: docker-compose -f docker-compose.test.yml build
+        run: docker compose -f docker-compose.test.yml build
       
       - name: Start application
-        run: docker-compose -f docker-compose.test.yml up -d
+        run: docker compose -f docker-compose.test.yml up -d
       
       - name: Wait for application
         run: |
           for i in {1..60}; do
-            if docker-compose -f docker-compose.test.yml ps | grep -q "healthy"; then
+            if docker compose -f docker-compose.test.yml ps | grep -q "healthy"; then
               echo "Application is ready!"
               exit 0
             fi
@@ -39,7 +39,7 @@ jobs:
             sleep 2
           done
           echo "Application failed to start"
-          docker-compose -f docker-compose.test.yml logs
+          docker compose -f docker-compose.test.yml logs
           exit 1
       
       - name: Install Playwright
