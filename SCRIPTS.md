@@ -97,7 +97,7 @@ docker run -p 8080:8080 pagoda-app
 ```bash
 # Used automatically by test-e2e-docker.sh
 # Or manually:
-docker-compose -f docker-compose.test.yml up
+docker compose -f docker-compose.test.yml up
 ```
 
 **Includes:**
