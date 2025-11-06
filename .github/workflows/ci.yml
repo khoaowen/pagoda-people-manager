@@ -185,7 +185,7 @@ jobs:
       - name: Run E2E tests
         working-directory: web-app
         run: |
-          npx playwright test --reporter="list,junit=playwright-report/results.xml"
+          npx playwright test --reporter=list --reporter=junit=playwright-report/results.xml
 
       - name: Publish E2E summary
         if: always()
