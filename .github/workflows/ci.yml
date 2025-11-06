@@ -184,7 +184,16 @@ jobs:
       
       - name: Run E2E tests
         working-directory: web-app
-        run: npm run test:e2e
+        run: |
+          npx playwright test --reporter="list,junit=playwright-report/results.xml"
+
+      - name: Publish E2E summary
+        if: always()
+        uses: dorny/test-reporter@dc3a92680fcc15842eef52e8c4606ea7ce6bd3f3
+        with:
+          name: Playwright E2E Report
+          path: web-app/playwright-report/results.xml
+          reporter: junit
       
       - name: Upload test results
         if: always()
