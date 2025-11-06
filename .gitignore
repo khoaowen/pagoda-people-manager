@@ -27,6 +27,12 @@ build/
 *.bak
 *.swp
 *.swo
+backend.log
+
+# Playwright test results
+web-app/test-results/
+web-app/playwright-report/
+web-app/.vite/
 
 # OS files
 .DS_Store
@@ -59,6 +65,10 @@ web-app/dist/
 web-app/.angular/
 web-app/.env
 web-app/.env.*
+
+# Spring Boot SPA staging area
+api/src/main/resources/static/
+!api/src/main/resources/static/.gitkeep
 
 # VSCode (if you also use it)
 .vscode/

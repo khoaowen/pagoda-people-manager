@@ -1,11 +1,10 @@
 # 🙏 Pagoda People Manager
 
-**Cross-platform application to manage people in a Vietnamese pagoda** — including Buddhists, lay brothers, and the master — with synchronized data across desktop and web.
+**Multi-module Spring Boot backend with a React PWA** to manage people in a Vietnamese pagoda — including Buddhists, lay brothers, and the master.
 
 ![Java](https://img.shields.io/badge/Core-Java-blue?logo=java)
-![JavaFX](https://img.shields.io/badge/Desktop-JavaFX-green?logo=openjfx)
 ![SpringBoot](https://img.shields.io/badge/Backend-SpringBoot-brightgreen?logo=springboot)
-![Angular](https://img.shields.io/badge/Web-Angular-red?logo=angular)
+![React](https://img.shields.io/badge/Web-React-61DAFB?logo=react&logoColor=white)
 ![CI](https://github.com/khoaowen/pagoda-people-manager/actions/workflows/ci.yml/badge.svg)
 
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=khoaowen_pagoda-people-manager)
@@ -14,14 +13,11 @@
 
 ## ✨ Features
 
-- Add, edit, and delete people records
-- Export:
-  - 📄 Individual profile to PDF (`Sơ yếu lý lịch`)
-  - 📋 Full list to PDF (`Danh sách`)
-- Sync data across platforms via REST API
-- Cross-platform desktop apps (Windows, macOS)
-- Responsive web app (Angular)
-- Modular architecture with shared core logic
+- Create and search pagoda members with Spring Boot + PostgreSQL/H2
+- Export PDF profile (`Sơ yếu lý lịch`) and complete roster (`Danh sách`)
+- React PWA frontend served directly from the backend
+- Multi-module hexagonal architecture (core, application, infrastructure, shared)
+- Automated CI covering unit, integration, frontend, and E2E flows
 
 ---
 
@@ -29,10 +25,15 @@
 
 ```bash
 pagoda-people-manager/
-├── core/             ← Domain model (Person, enums)
-├── application/      ← Business use cases (PersonService)
-├── infrastructure/   ← JPA, PDF
-├── shared/           ← DTOs for API
-├── api/              ← REST controllers
-├── desktop-app/      ← JavaFX UI
-├── web-app/          ← Angular frontend
+├── architecture-tests/   # ArchUnit rules guarding module boundaries
+├── core/                 # Domain model (Person aggregate, value objects)
+├── shared/               # DTOs, mappers, and cross-module contracts
+├── application/          # Use cases and ports (CQRS style)
+├── infrastructure/       # JPA adapters and PDF generation
+├── api/                  # Spring Boot REST API (serves SPA + PDFs)
+├── report-aggregate/     # Jacoco aggregate report module
+├── web-app/              # React + Vite frontend (PWA)
+├── docker-compose.test.yml  # Compose stack for Playwright E2E
+├── run-local.sh          # Build SPA and boot backend locally
+└── test-e2e-docker.sh    # Docker-backed Playwright runner
+```
