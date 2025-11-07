@@ -184,8 +184,7 @@ jobs:
       
       - name: Run E2E tests
         working-directory: web-app
-        run: |
-          npx playwright test --reporter=list --reporter=junit
+        run: npm run test:e2e
 
       - name: Publish E2E summary
         if: always()
