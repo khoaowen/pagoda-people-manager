@@ -193,7 +193,7 @@ jobs:
         with:
           name: Playwright E2E Report
           path: web-app/playwright-report/results.xml
-          reporter: junit
+          reporter: java-junit
       
       - name: Upload test results
         if: always()
