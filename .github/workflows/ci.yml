@@ -73,7 +73,7 @@ jobs:
         run: mvn verify -Pcoverage-report
 
       - name: Upload merged jacoco report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: jacoco-report
           path: report-aggregate/target/site/jacoco-aggregate/jacoco.xml
@@ -138,7 +138,7 @@ jobs:
         run: mvn clean package -Pskip-all-tests
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: pagoda-app
           path: api/target/*.jar
@@ -196,7 +196,7 @@ jobs:
       
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: playwright-report
           path: web-app/playwright-report/
