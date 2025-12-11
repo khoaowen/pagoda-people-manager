@@ -6,10 +6,7 @@
 - Start the Spring Boot backend in another terminal before running tests:
   ```bash
   # From repo root
-  ./run-local.sh
-  ```
-  or manually:
-  ```bash
+  cd web-app
   npm run build          # ensure fresh frontend assets
   cp -r dist/* ../api/src/main/resources/static/
   (cd ../api && mvn spring-boot:run)
@@ -90,7 +87,7 @@ npx playwright test --project=webkit
 
 ## ⚙️ How It Works
 
-1. You build the frontend and start the Spring Boot backend yourself (`./run-local.sh` is the easiest path).
+1. You build the frontend and start the Spring Boot backend yourself (commands shown above).
 2. Playwright hits the live app at `http://localhost:8080` and exercises the full stack.
 3. When you're done, stop the backend with `Ctrl+C` in the terminal where it is running.
 
@@ -104,11 +101,11 @@ npx playwright test --project=webkit
 lsof -i :8080
 kill -9 <PID>
 ```
-- Make sure the `dist/` folder was copied to `api/src/main/resources/static/` (use `./run-local.sh` to automate).
+- Make sure the `dist/` folder was copied to `api/src/main/resources/static/`.
 
 **Frontend assets look stale:**
 - Rebuild: `npm run build`
-- Re-run `./run-local.sh` to copy fresh assets before retrying tests.
+- Copy fresh assets: `cp -r dist/* ../api/src/main/resources/static/` before retrying tests.
 
 **Need to see what's happening:**
 ```bash

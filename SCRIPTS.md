@@ -2,23 +2,6 @@
 
 ## Available Scripts
 
-### `./run-local.sh`
-**Purpose:** Run full-stack app locally (production-like)
-
-**What it does:**
-1. Builds frontend
-2. Copies to backend static resources
-3. Starts Spring Boot (frontend embedded)
-
-**Usage:**
-```bash
-./run-local.sh
-```
-
-Access at: `http://localhost:8080`
-
----
-
 ### `./test-e2e-docker.sh`
 **Purpose:** Run E2E tests with Docker
 
@@ -64,7 +47,7 @@ npm run test:e2e
 npm run test:e2e:ui
 ```
 
-Start the backend first (`./run-local.sh` or `cd api && mvn spring-boot:run`) before executing the E2E commands.
+Start the backend first (`cd api && mvn spring-boot:run`) before executing the E2E commands. If you need the backend to serve the built SPA, run `npm run build` in `web-app` and copy `web-app/dist/*` into `api/src/main/resources/static/` before starting Spring Boot.
 
 ### Full Stack Testing
 ```bash
