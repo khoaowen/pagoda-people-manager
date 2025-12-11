@@ -34,6 +34,5 @@ pagoda-people-manager/
 ├── report-aggregate/     # Jacoco aggregate report module
 ├── web-app/              # React + Vite frontend (PWA)
 ├── docker-compose.test.yml  # Compose stack for Playwright E2E
-├── run-local.sh          # Build SPA and boot backend locally
 └── test-e2e-docker.sh    # Docker-backed Playwright runner
 ```

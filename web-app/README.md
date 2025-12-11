@@ -35,20 +35,10 @@ npm run preview
 
 ### Environment Variables
 
-**Development** (`.env.development`):
-```
-VITE_API_URL=http://localhost:8080/api/persons
-```
-
-**Production** (`.env.production`):
-```
-VITE_API_URL=/api/persons
-```
-
-**Local Override** (`.env.local` - not committed):
-```
-VITE_API_URL=http://your-custom-url/api/persons
-```
+- Default fallback in code: `VITE_API_URL` → `http://localhost:8080/api/persons`
+- Override for dev: set `VITE_API_URL=http://localhost:8080/api/persons` before `npm run dev`
+- Override for prod build outside Docker: set `VITE_API_URL=/api/persons` before `npm run build` (Dockerfile already
+  injects this by default)
 
 ### Deployment Options
 

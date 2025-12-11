@@ -1,0 +1,14 @@
+.git
+.gitignore
+node_modules
+**/node_modules
+web-app/dist
+web-app/playwright-report
+web-app/test-results
+web-app/.env
+web-app/.env.*
+**/target
+.idea
+.vscode
+tmp
+*.log
